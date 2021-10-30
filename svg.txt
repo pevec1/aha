@@ -1,0 +1,9 @@
+                <slider class="svg">
+                    <div class="imgs imgs2" style="display: flex;">
+                     <div class="btn-prev"><img src="img/ChevronPrev.svg"></div>
+                       <img class="img1" src="images/slide1.png" alt="slide1" />
+                        <img class="img2" src="images/slide2.png" alt="slide2" />
+                        <img class="img3" src="images/slide3.png" alt="slide3" />
+                    <div class="btn-next"><img src="img/ChevronNext.svg"></div>
+                    </div>
+                </slider>
