@@ -1,12 +1,12 @@
 <?php
-ini_set('session.use_cookies',1);
-ini_set('session.use_only_cookies',1);
+ini_set('session.use_cookies', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
 //require_once "config_local.php";
 // if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])){
-//     header("Location: main.php");
+//     header("Location: index.php");
 //     exit;
-// }	
+// }
 ?>
 
 <!DOCTYPE html>
@@ -39,19 +39,23 @@ session_start();
                             <p class="logo">АХА Code</p>
                         </a>
                     </li>
-                    <li><a href="main.php">Главная</a></li>
+                    <li><a href="index.php">Главная</a></li>
                     <li><a href="works.php">Работы</a></li>
                     <li><a href="creative.php">Творчество</a></li>
                     <li><a href="photos.php">Фотогалерея</a></li>
                     <li><a href="aboutus.php">Контакты</a></li>
                     <li style="margin-top: 20px"> </li>
-                        <!-- <a href='#' class='btn lk'>Личный кабинет</a>
-<a href='main.php' class='btn logout'>Выход</a> -->
-                        <?php
-    if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) { echo "<a href='#' class='btn lk' data-bs-toggle='modal' data-bs-target='#exampleModal'>Личный кабинет</a>";} else {echo "<a href='lk.php' class='btn lkk'>ЛК</a><a href='main.php' class='btn logout'>Выход</a>";}
-?>
+                    <!-- <a href='#' class='btn lk'>Личный кабинет</a>
+<a href='index.php' class='btn logout'>Выход</a> -->
+                    <?php
+                    if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) {
+                        echo "<a href='#' class='btn lk' data-bs-toggle='modal' data-bs-target='#exampleModal'>Личный кабинет</a>";
+                    } else {
+                        echo "<a href='lk.php' class='btn lkk'>ЛК</a><a href='index.php' class='btn logout'>Выход</a>";
+                    }
+                    ?>
 
-                   
+
                 </ul>
             </div>
         </div>
@@ -63,9 +67,11 @@ session_start();
                         <a class="menu-close" href="#"></a>
                         <ul>
                             <li>
-                                <a href="index.php"><p class="logo">АХА Code</p></a>
+                                <a href="index.php">
+                                    <p class="logo">АХА Code</p>
+                                </a>
                             </li>
-                            <li><a href="main.php">Главная</a></li>
+                            <li><a href="index.php">Главная</a></li>
                             <li><a href="works.php">Работы</a></li>
                             <li><a href="creative.php">Творчество</a></li>
                             <li><a href="photos.php">Фотогалерея</a></li>
@@ -73,10 +79,14 @@ session_start();
                             <li style="margin-top: 20px"></li>
                             <li>
                                 <!-- <a href='#' class='btn lk'>Личный кабинет</a>
-<a href='main.php' class='btn logout'>Выход</a> -->
+<a href='index.php' class='btn logout'>Выход</a> -->
                                 <?php
-    if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) { echo "<a href='#' class='btn lk' data-bs-toggle='modal' data-bs-target='#exampleModal'>Личный кабинет</a>";} else {echo "<a href='lk.php' class='btn lkk'>ЛК</a><a href='main.php' class='btn logout'>Выход</a>";}
-?>
+                                if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) {
+                                    echo "<a href='#' class='btn lk' data-bs-toggle='modal' data-bs-target='#exampleModal'>Личный кабинет</a>";
+                                } else {
+                                    echo "<a href='lk.php' class='btn lkk'>ЛК</a><a href='index.php' class='btn logout'>Выход</a>";
+                                }
+                                ?>
 
 
 
@@ -91,7 +101,7 @@ session_start();
             <section>
                 <div class="container-offer">
                     <div class="row">
-                        <div class="business-offer col-12 col-md-6 col-xl-6">
+                        <div class="business-offer col-12 col-md-5 col-xl-5">
                             <h1>
                                 Здесь превью наших
                                 <span style="color: #7bc0e3">работ</span>
@@ -109,7 +119,10 @@ session_start();
                                 <!-- </div> -->
                             </div>
                         </div>
-                        <div class="business-offer col-12 col-md-6 col-xl-6">
+                        <div class="col-12 col-md-2 col-xl-2">
+                            <canvas id="canvas" class="canvas"><img id="logos" class="img-rotate" src="ima/logo.png" alt="" /></canvas>
+                        </div>
+                        <div class="business-offer col-12 col-md-5 col-xl-5">
                             <img class="analyse" src="img/analyse1.png" />
                         </div>
                     </div>
@@ -133,8 +146,7 @@ session_start();
                                 <h3>AXA Code</h3>
                                 <p>Войдите, чтобы продолжить</p>
                                 <div class="error"></div>
-                                <input type="text" name="login" id="login"
-                                    placeholder="Введите логин, почту или телефон" />
+                                <input type="text" name="login" id="login" placeholder="Введите логин, почту или телефон" />
                                 <br />
                                 <input type="password" name="passwd" id="passwd" />
                             </div>
@@ -159,30 +171,18 @@ session_start();
                 <div class="row justify-content-center">
                     <div id="carousel" class="col-10 col-md-8 col-lg-6 carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
-                                aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="4"
-                                aria-label="Slide 5"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="5"
-                                aria-label="Slide 6"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="6"
-                                aria-label="Slide 7"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="7"
-                                aria-label="Slide 8"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="8"
-                                aria-label="Slide 9"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="9"
-                                aria-label="Slide 10"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="10"
-                                aria-label="Slide 11"></button>
-                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="11"
-                                aria-label="Slide 12"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                            <button type="button" data-bs-target="#carousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -222,13 +222,11 @@ session_start();
                                 <img src="images/slide12.png" class="d-block w-100" alt="...">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -283,6 +281,8 @@ session_start();
     <script src="js/menu.js"></script>
     <script src="js/signin.js"></script>
     <script src="js/signout.js"></script>
+    <script src="js/scripts_rotate.js"></script>
+
 </body>
 
 </html>

@@ -1,12 +1,12 @@
 <?php
-ini_set('session.use_cookies',1);
-ini_set('session.use_only_cookies',1);
+ini_set('session.use_cookies', 1);
+ini_set('session.use_only_cookies', 1);
 session_start();
 //require_once "config_local.php";
-if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])){
-    header("Location: main.php");
+if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) {
+    header("Location: index.php");
     exit;
-}	
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,17 +39,21 @@ if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['l
                             <p class="logo">АХА Code</p>
                         </a>
                     </li>
-                    <li><a href="main.php">Главная</a></li>
+                    <li><a href="index.php">Главная</a></li>
                     <li><a href="works.php">Работы</a></li>
                     <li><a href="creative.php">Творчество</a></li>
                     <li><a href="photos.php">Фотогалерея</a></li>
                     <li><a href="aboutus.php">Контакты</a></li>
                     <li style="margin-top: 20px"></li>
-                        <?php
-    if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) { echo "";} else {echo "<a href='main.php' class='btn logout'>Выход</a>";}
-?>
-                        <!-- <a href="main.php" class="btn logout">Выход</a> -->
-                    
+                    <?php
+                    if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) {
+                        echo "";
+                    } else {
+                        echo "<a href='index.php' class='btn logout'>Выход</a>";
+                    }
+                    ?>
+                    <!-- <a href="index.php" class="btn logout">Выход</a> -->
+
                 </ul>
             </div>
         </div>
@@ -61,18 +65,24 @@ if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['l
                         <a class="menu-close" href="#"></a>
                         <ul>
                             <li>
-                                <a href="index.php"><p class="logo">АХА Code</p></a>
+                                <a href="index.php">
+                                    <p class="logo">АХА Code</p>
+                                </a>
                             </li>
-                            <li><a href="main.php">Главная</a></li>
+                            <li><a href="index.php">Главная</a></li>
                             <li><a href="works.php">Работы</a></li>
                             <li><a href="creative.php">Творчество</a></li>
                             <li><a href="photos.php">Фотогалерея</a></li>
                             <li><a href="aboutus.php">Контакты</a></li>
                             <li style="margin-top: 20px"></li>
                             <?php
-    if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) { echo "";} else {echo "<a href='main.php' class='btn logout'>Выход</a>";}
-?>
-                            <!-- <a href="main.php" class="btn logout">Выход</a> -->
+                            if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['login']) && !isset($_SESSION['password'])) {
+                                echo "";
+                            } else {
+                                echo "<a href='index.php' class='btn logout'>Выход</a>";
+                            }
+                            ?>
+                            <!-- <a href="index.php" class="btn logout">Выход</a> -->
                             </li>
                         </ul>
                     </div>
@@ -84,7 +94,7 @@ if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['l
             <section>
                 <div class="container-offer">
                     <div class="row">
-                        <div class="business-offer col-12 col-md-6 col-xl-6">
+                        <div class="business-offer col-12 col-md-5 col-xl-5">
                             <h1>
                                 Вы вошли в
                                 <span style="color: #7bc0e3">личный кабинет</span>
@@ -102,7 +112,10 @@ if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['l
                                 <!-- </div> -->
                             </div>
                         </div>
-                        <div class="business-offer col-12 col-md-6 col-xl-6">
+                        <div class="col-12 col-md-2 col-xl-2">
+                            <canvas id="canvas" class="canvas"><img id="logos" class="img-rotate" src="ima/logo.png" alt="" /></canvas>
+                        </div>
+                        <div class="business-offer col-12 col-md-5 col-xl-5">
                             <img class="analyse" src="img/analyse1.png" />
                         </div>
                     </div>
@@ -134,7 +147,7 @@ if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['l
             </div>
         </section>
     </main>
-     <footer>
+    <footer>
         <div class="container">
             <h3>AXA Code 2021</h3>
             <div>Контакты</div>
@@ -158,6 +171,8 @@ if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['l
     <script src="js/menu.js"></script>
     <script src="js/signin.js"></script>
     <script src="js/signout.js"></script>
+    <script src="js/scripts_rotate.js"></script>
+
 </body>
 
 </html>
