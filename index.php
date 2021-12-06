@@ -28,7 +28,7 @@ session_start();
                 <ul class="logos">
                     <li>
                         <a href="index.php">
-                            <p class="logo">АХА Code</p>
+                            <p class="logo"><img src="/img/axacode.png"></p>
                         </a>
                     </li>
                     <li><a href="index.php">Главная</a></li>
@@ -63,7 +63,7 @@ session_start();
                         <ul>
                             <li>
                                 <a href="index.php">
-                                    <p class="logo">АХА Code</p>
+                                    <p class="logo"><img src="/img/axamobile.png"></p>
                                 </a>
                             </li>
                             <li><a href="index.php">Главная</a></li>
@@ -89,7 +89,9 @@ session_start();
                         </ul>
                     </div>
                 </div>
-                <p class="logo">АХА Code</p>
+                <a href="index.php">
+                    <p class="logo"><img src="/img/axamobile.png"></p>
+                </a>
             </div>
 
             <section>

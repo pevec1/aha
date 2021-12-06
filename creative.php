@@ -36,7 +36,7 @@ session_start();
                 <ul class="logos">
                     <li>
                         <a href="index.php">
-                            <p class="logo">АХА Code</p>
+                            <p class="logo"><img src="/img/axacode.png"></p>
                         </a>
                     </li>
                     <li><a href="index.php">Главная</a></li>

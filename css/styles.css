@@ -675,16 +675,16 @@ footer {
     height: 40px;
     position: absolute;
     right: 40px;
-    top: 20px;
+    top: 10px;
   }
   .menu-close {
     background: url(../img/close.png) 0 0 repeat;
     display: block;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     right: 30px;
-    top: 20px;
+    top: 10px;
     z-index: 100;
   }
   .menu-popup {
@@ -869,16 +869,16 @@ padding: 0;     */
     height: 40px;
     position: absolute;
     right: 40px;
-    top: 20px;
+    top: 10px;
   }
   .menu-close {
     background: url(../img/close.png) 0 0 repeat;
     display: block;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     right: 30px;
-    top: 20px;
+    top: 10px;
     z-index: 100;
   }
   .menu-popup {

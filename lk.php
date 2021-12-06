@@ -36,7 +36,7 @@ if (!isset($_POST['login']) && !isset($_POST['password']) && !isset($_SESSION['l
                 <ul class="logos">
                     <li>
                         <a href="index.php">
-                            <p class="logo">АХА Code</p>
+                            <p class="logo"><img src="/img/axacode.png"></p>
                         </a>
                     </li>
                     <li><a href="index.php">Главная</a></li>
